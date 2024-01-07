@@ -1,0 +1,44 @@
+Selection sorting:
+-->The algorithm repeatedly selects the smallest (or largest) element from the unsorted portion of the list and swaps it with the first element of the unsorted part. This process is repeated for the remaining unsorted portion until the entire list is sorted. 
+
+The time complexity of Selection Sort is O(N2) as there are two nested loops.
+ O(1) as the only extra memory used is for temporary variables while swapping two values in Array. The selection sort never makes more than O(N) swaps and can be useful when memory writing is costly. 
+
+ Simple and easy to understand.
+ Selection sort has a time complexity of O(n^2) in the worst and average case.
+
+
+ Example with code:
+ class Selection {
+
+    public static void sort(int arr[]) {
+        System.out.println("Before sorting:");
+        for(int x: arr) {
+            System.out.print(x + " ");
+        }
+        for(int i = 0; i < arr.length-1; i++) {
+            int small = i;
+            for(int l = i+1; l < arr.length; l++)
+            {
+                if(arr[small] > arr[l]) {
+                    small = l;
+                }
+            }
+            // int temp = arr[i];
+            // arr[i] = arr[small];
+            // arr[small] = temp;
+            int temp= arr[i];
+            arr[i] = arr[small];
+            arr[small] = temp;
+        }
+
+        System.out.println("\nAfter sorting:");
+        for(int x: arr) {
+            System.out.print(x+ " ");
+        }
+    }
+    public static void main(String argu[]) {
+        int arr[] = { 12, 4, 56, 67, 8 };
+     sort(arr);
+    }
+}

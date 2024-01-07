@@ -1,0 +1,37 @@
+Date:2023/5/31
+
+
+Bubble Sorting:
+-->Bubble Sort is the simplest sorting algorithm that works by repeatedly swapping the adjacent elements if they are in the wrong order. This algorithm is not suitable for large data sets as its average and worst-case time complexity is quite high.
+
+Time Complexity: O(N2)
+Auxiliary Space: O(1)
+
+Bubble sort is easy to understand and implement.
+Bubble sort has a time complexity of O(N2) which makes it very slow for large data sets.
+
+Example with code:
+class Bubble {
+    public static void main(String argu[]) {
+        int arr[] = { 12, 3, 54, 56, 7 };
+
+        System.out.println("Before sorting:");
+        for(int i = 0;  i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
+        for (int i = 0; i < arr.length - 1; i++) {
+            for (int l = 0; l < arr.length - 1 - i; l++) {
+                if (arr[l] > arr[l + 1]) {
+                    int temp = arr[l];
+                    arr[l] = arr[l + 1];
+                    arr[l + 1] = temp;
+                }
+            }
+        }
+        // for output 
+        System.out.println("\nAfter sorting:");
+        for(int i = 0;  i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
+    }
+}

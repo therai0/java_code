@@ -1,0 +1,38 @@
+Insertion sort:
+-->Insertion sort is a simple sorting algorithm that works similar to the way you sort playing cards in your hands. The array is virtually split into a sorted and an unsorted part. Values from the unsorted part are picked and placed at the correct position in the sorted part.
+
+https://media.geeksforgeeks.org/wp-content/uploads/insertionsort.png
+
+
+Time Complexity: O(N^2) 
+Auxiliary Space: O(1)
+
+Example with code:
+class Insertion {
+    public static void sort(int arr[]) {
+        System.out.println("Before sorting:");
+        for (int x : arr) {
+            System.out.print(x + " ");
+        }
+
+        for (int i = 0; i < arr.length; i++) {
+            int small = arr[i];
+            int l = i - 1;
+            while (l >= 0 && small < arr[l]) {
+                arr[l + 1] = arr[l];
+                l--;
+            }
+            arr[l+1] = small;
+        }
+        System.out.println("\nAfter sorting:");
+        for (int x : arr) {
+            System.out.print(x + " ");
+        }
+    }
+
+    public static void main(String argu[]) {
+
+        int a[] = { 12, 32, 4, 5, 2 };
+        sort(a);
+    }
+}

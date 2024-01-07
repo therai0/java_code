@@ -1,0 +1,2 @@
+--> Tree is the hirerchical data structure.
+Binary tree is the special types of  tree which have only maximum 2 branch or child.
